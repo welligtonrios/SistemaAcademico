@@ -11,18 +11,11 @@ public class Aluno {
 	private String email;
 	private long telefone;
 	private boolean situacao;
-	private String curso;
-
+	private Curso curso;
+   
 	
-	//ArrayL para armazenar as disciplinas 
 	
-	String [] disciplinas = new String[6];
-	
-	 public String[] getDisciplinas() {
-		return disciplinas;
-	}
-
-
+	private ArrayList<Disciplina> disciplina = new ArrayList<Disciplina>();
 	
 	
 	//construtores
@@ -32,7 +25,7 @@ public class Aluno {
 	}
 
 	public Aluno(String nome, long cpf, long matricula, String endereço, String email, long telefone, boolean situacao,
-			String curso, ArrayList<String> disciplinas) {
+			Curso curso) {
 		super();
 		this.nome = nome;
 		this.cpf = cpf;
@@ -42,6 +35,7 @@ public class Aluno {
 		this.telefone = telefone;
 		this.situacao = situacao;
 		this.curso = curso;
+		
 	}
 	
 	
@@ -103,14 +97,15 @@ public class Aluno {
 		this.situacao = situacao;
 	}
 
-	public String getCurso() {
+	public Curso getCurso() {
 		return curso;
 	}
 
-	public void setCurso(String curso) {
+	public void setCurso(Curso curso) {
 		this.curso = curso;
 	}
 
+	//metodo que retorna os dados do aluno
 	
 	public void mostraAluno() {
 		
@@ -123,13 +118,8 @@ public class Aluno {
 		System.out.println("Situação : " + this.situacao);
 		System.out.println("curso : " + this.curso);
 		
-		System.out.println("Disciplinas: \n");
+
 		
-		for (String disciplina : disciplinas) {
-			System.out.println(disciplina);
-			
-			
-		}
 		
 		
 	}
