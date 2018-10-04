@@ -41,6 +41,10 @@ public class Aluno {
 	
 	// getters and setters
 
+	public ArrayList<Disciplina> getdisciplina(){
+		return this.disciplina;
+	}
+	
 	public String getNome() {
 		return nome;
 	}
