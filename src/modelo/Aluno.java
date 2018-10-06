@@ -7,7 +7,7 @@ public class Aluno {
 	private String nome; 
 	private long  cpf;
 	private long matricula;
-	private String endereço;
+	private String endereco;
 	private String email;
 	private long telefone;
 	private boolean situacao;
@@ -24,13 +24,13 @@ public class Aluno {
 		
 	}
 
-	public Aluno(String nome, long cpf, long matricula, String endereço, String email, long telefone, boolean situacao,
+	public Aluno(String nome, long cpf, long matricula, String endereco, String email, long telefone, boolean situacao,
 			Curso curso) {
 		super();
 		this.nome = nome;
 		this.cpf = cpf;
 		this.matricula = matricula;
-		this.endereço = endereço;
+		this.endereco = endereco;
 		this.email = email;
 		this.telefone = telefone;
 		this.situacao = situacao;
@@ -69,12 +69,12 @@ public class Aluno {
 		this.matricula = matricula;
 	}
 
-	public String getEndereço() {
-		return endereço;
+	public String getEndereco() {
+		return endereco;
 	}
 
-	public void setEndereço(String endereço) {
-		this.endereço = endereço;
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
 	}
 
 	public String getEmail() {
@@ -116,13 +116,13 @@ public class Aluno {
 		System.out.println("nome : " + this.nome);
 		System.out.println("cpf : " + this.cpf);
 		System.out.println("matricula: " + this.matricula);
-		System.out.println("Endereço : " + this.endereço);
+		System.out.println("Endereco : " + this.endereco);
 		System.out.println("Email : " + this.email);
 		System.out.println("Telefone : " + this.telefone);
-		System.out.println("Situação : " + this.situacao);
+		System.out.println("Situaco : " + this.situacao);
 		System.out.println("curso : " + this.curso);
 		
-
+   //listar as disciplinas 
 		
 		
 		

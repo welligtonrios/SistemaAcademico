@@ -1,15 +1,24 @@
 package modelo;
 
+import java.util.ArrayList;
+
 public class Professor {
 	
 	private String nome; 
 	private long  cpf;
 	private String email;
 	private long telefone;
-	private String endereço;
+	private String endereco;
 	private String categoria;
-	private String disciplinas;
 	
+	//Arraylist para disciplina do professor
+	
+	private ArrayList<Disciplina> disciplinaProf = new ArrayList<Disciplina>();
+	
+	public ArrayList<Disciplina> getDisciplinaProf() {
+		return disciplinaProf;
+	}
+
 	
 	//construtores 
 	
@@ -19,16 +28,15 @@ public class Professor {
 	}
 
 
-	public Professor(String nome, long cpf, String email, long telefone, String endereço, String categoria,
+	public Professor(String nome, long cpf, String email, long telefone, String endereco, String categoria,
 			String disciplinas) {
 		super();
 		this.nome = nome;
 		this.cpf = cpf;
 		this.email = email;
 		this.telefone = telefone;
-		this.endereço = endereço;
+		this.endereco = endereco;
 		this.categoria = categoria;
-		this.disciplinas = disciplinas;
 	}
 
 	// getters e setters 
@@ -74,13 +82,13 @@ public class Professor {
 	}
 
 
-	public String getEndereço() {
-		return endereço;
+	public String getEndereco() {
+		return endereco;
 	}
 
 
-	public void setEndereço(String endereço) {
-		this.endereço = endereço;
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
 	}
 
 
@@ -94,27 +102,22 @@ public class Professor {
 	}
 
 
-	public String getDisciplinas() {
-		return disciplinas;
-	}
-
-
-	public void setDisciplinas(String disciplinas) {
-		this.disciplinas = disciplinas;
-	}
 	
 	public void mostraProfessor() {
 		
 		System.out.println("nome : " + this.nome);
 		System.out.println("cpf : " + this.cpf);
-		System.out.println("Endereço : " + this.endereço);
+		System.out.println("Endereco : " + this.endereco);
 		System.out.println("Email : " + this.email);
 		System.out.println("Telefone : " + this.telefone);
 		System.out.println("Disciplinas: \n");
 		
 		
 		
+		
 	}
+
+
 	
 	
 	
