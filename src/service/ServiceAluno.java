@@ -19,12 +19,18 @@ public class ServiceAluno {
 	
 	//cadastrar um Aluno 
 	
-	public void addAluno(String nome, long cpf, long matricula, String endereco, String email, long telefone, boolean situacao,
+	public void addAluno(String nome, String cpf, long matricula, String endereco, String email, long telefone, boolean situacao,
 			Curso curso) {
-		//obj para receber meu aluno;
-		Aluno c = new Aluno(nome,cpf,matricula,endereco,email,telefone,situacao,curso);
 		
-									listAluno.add(c);
+		
+		//obj para receber meu aluno;
+		Aluno aluno = new Aluno();
+		
+		aluno.setNome(nome);
+		aluno.setCpf(cpf);
+		//receber a matricula
+		aluno.setMatricula(matricula);
+		
 	}
 
 	 //pesquisar o Aluno pela matricula

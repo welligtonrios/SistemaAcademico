@@ -60,7 +60,7 @@ public class ServiceCurso {
 	
 	//ADD um curso 
 	
-	public void adicionarCurso(String nome , int codigo, String turno, String professorCordeenador) {
+	public void adicionarCurso(String nome , int codigo, String turno, Professor professorCordeenador) {
 		
 		Curso curso = new Curso();
 		
@@ -68,7 +68,6 @@ public class ServiceCurso {
 	curso.setTurno(turno);
 	curso.setProfessorCordeenador(professorCordeenador);
 	curso.setCodigo(codigo);
-	
 	listCurso.add(curso);	
 		
 	}
