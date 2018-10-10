@@ -17,7 +17,7 @@ public class testeAluno {
 		
 		while(ops != 0) {
 			
-			System.out.println("Escolha uma opção: \n ");
+			System.out.println("Escolha uma opï¿½ï¿½o: \n ");
 			System.out.println("(1) adicionar um aluno ");
 			System.out.println("(2) Buscar contato");
 			System.out.println("(3) Alterar contato");
@@ -32,12 +32,12 @@ public class testeAluno {
 			case 1 : 
 				
 				 System.out.println("Digite o nome do aluno");
-				 String nome = teclado.nextLine();
+				 String nome = teclado.next();
 				 System.out.println("Digite seu cpf");
-				 String cpf = teclado.nextLine();
+				 String cpf = teclado.next();
 			     System.out.println("Digite seu Endereco");
-			     String endereco = teclado.nextLine();
-			     serviceAluno.addAluno(nome, cpf, endereco);
+			     String endereco = teclado.next();
+			     serviceAluno.addAluno(nome, cpf, ops, endereco, nome, ops, false, null);
 			     break;
 			     
 			     
