@@ -1,21 +1,15 @@
 package modelo;
 
-import java.util.ArrayList;
-
 public class Curso {
 
 	
 	private String nome;
-	private int  codigo;
+	private String  codigo;
 	private String turno;
-	private Professor ProfessorCordeenador;
+	private Professor professorCoordenador;
+
 	
 	//lista de diciplina do curso 
-	ArrayList<Disciplina> grandeCurso = new ArrayList<Disciplina>();
-
-	public ArrayList<Disciplina> getGrandeCurso() {
-		return grandeCurso;
-	}
 
 	
 	
@@ -27,11 +21,11 @@ public class Curso {
 		this.nome = nome;
 	}
 
-	public int getCodigo() {
+	public String getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(int codigo) {
+	public void setCodigo(String codigo) {
 		this.codigo = codigo;
 	}
 
@@ -43,13 +37,19 @@ public class Curso {
 		this.turno = turno;
 	}
 
-	public Professor getProfessorCordeenador() {
-		return ProfessorCordeenador;
+
+
+	public Professor getProfessorCoordenador() {
+		return professorCoordenador;
 	}
 
-	public void setProfessorCordeenador(Professor professorCordeenador) {
-		ProfessorCordeenador = professorCordeenador;
+
+
+	public void setProfessorCoordenador(Professor professorCoordenador) {
+		this.professorCoordenador = professorCoordenador;
 	}
+
+	
 
 	
 	
