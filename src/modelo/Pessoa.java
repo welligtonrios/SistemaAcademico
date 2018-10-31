@@ -3,12 +3,12 @@ package modelo;
 
  public abstract class Pessoa {
 	
-	private String nome;
-	private String cpf;
-	private String matricula;
-	private String endereco;
-	private String email;
-	private String telefone;
+	protected String nome;
+	protected String cpf;
+	protected String matricula;
+	protected String endereco;
+	protected String email;
+	protected String telefone;
 	
 	
 /////

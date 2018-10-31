@@ -46,6 +46,18 @@ public Professor(){
 	public ArrayList<Disciplina> getDisciplinaProf() {
 		return disciplinaProf;
 	}
+
+
+	
+	
+	///////
+	
+	@Override
+	public String toString() {
+		return "Professor [categoria=" + categoria + ", disciplinaProf=" + disciplinaProf + "]";
+	}
+	
+	
 	
 
 }

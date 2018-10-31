@@ -19,14 +19,13 @@ public class Disciplina {
 	/////
 
 	public Disciplina() {
-		super();
+		
 	}
 
 
 
 
-	public Disciplina(String nomeDisc, String codigoDisc, int sala, int cargaHoraria, double custo,
-			Professor professor) {
+	public Disciplina(String nomeDisc, String codigoDisc, int sala, int cargaHoraria, double custo,Professor professor) {
 		super();
 		this.nomeDisc = nomeDisc;
 		this.codigoDisc = codigoDisc;
@@ -147,9 +146,20 @@ public class Disciplina {
 	
 	
 	
+////
 	
+	public void addAluno(String nome, String matricula) {
+		Aluno a = new Aluno();
+		a.getNome();
+		a.getMatricula();
+		chamada.add(a);
+	}
 	
-	
+	public void mostraDisciplinas() {
+		for (Aluno aluno : chamada) {
+			aluno.mostraAluno();
+		}
+	}
 	
 	
 

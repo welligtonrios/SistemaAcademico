@@ -2,19 +2,23 @@ package service;
 
 import java.util.ArrayList;
 
+import modelo.Aluno;
+import modelo.Curso;
 import modelo.Disciplina;
+import modelo.Professor;
 
 public class ServiceDisciplina {
 	
-	ArrayList<Disciplina> listDisciplina = new ArrayList<Disciplina>();
+	
+	ArrayList<Aluno> chamada = new ArrayList<Aluno>();
 	
 	
-	public ArrayList<Disciplina>getListDisciplina(){
-		return this.listDisciplina;
-	}
+	///crud 
 	
-
-	//CRUD
+	
+	
+	
+	
 	
 	
 	

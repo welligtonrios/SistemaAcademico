@@ -60,8 +60,59 @@ public ArrayList<Disciplina> getDisciplina() {
 public void setDisciplina(ArrayList<Disciplina> disciplina) {
 	this.disciplina = disciplina;
 }
+
+
+
+
+
+
+/////////////////
+
+
+@Override
+public String toString() {
+	return "Aluno [matricula=" + matricula + ", situacao=" + situacao + ", curso=" + curso + ", disciplina="
+			+ disciplina + "]";
+}
+
+
+////sistuçao
+
+
+public Boolean  situacao(Aluno objAluno) {
+	if(objAluno.getMatricula().equals(matricula) ) {
+		System.out.println("O aluno esta matriculado");
+		return true;
+	}else {
+		System.out.println("aluno nao esta matriculado, faça sua matricula");
+		return false;
+	}
+}
+
+
+public void mostraAluno() {
+	
+	System.out.println("nome : "+ getNome());
+	System.out.println("Curso " + getCurso());
+	System.out.println("disciplinas ");
+        
+	}
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}
 
 	
 	
