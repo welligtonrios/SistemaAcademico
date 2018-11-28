@@ -1,33 +1,35 @@
 package modelo;
 
-import java.util.ArrayList; 
+
+import java.util.ArrayList;
+import java.util.List;
+
+import herdar.Pessoa; 
 
 public class Aluno extends Pessoa {
 	
-    //
 	private String matricula;
-	private boolean situacao;
+	private Situacao situacao;
 	private Curso curso;
 	
-	///
+///
 	
-	
-	private ArrayList<Disciplina> disciplina = new ArrayList<Disciplina>();
+	private List<Disciplina> listDisciplina = new ArrayList<Disciplina>(6);
 
-	////
-public Aluno(){
+//// metodos especiais 
 	
-	
-}
 
-public Aluno(String nome, String cpf, String matricula, String endereco, String email, String telefone, boolean situacao, Curso curso) {
-	super(nome,cpf,endereco,email,telefone);
+
+
+public Aluno(String nome, String cpf, String endereco, String email, String telefone, String matricula,
+		 Curso curso) {
+	super(nome, cpf, endereco, email, telefone);
 	this.matricula = matricula;
-	this.situacao = situacao;
 	this.curso = curso;
+	
 }
 
-///////
+
 
 public String getMatricula() {
 	return matricula;
@@ -37,11 +39,11 @@ public void setMatricula(String matricula) {
 	this.matricula = matricula;
 }
 
-public boolean isSituacao() {
+public Situacao isSituacao() {
 	return situacao;
 }
 
-public void setSituacao(boolean situacao) {
+public void setSituacao(Situacao situacao) {
 	this.situacao = situacao;
 }
 
@@ -53,57 +55,43 @@ public void setCurso(Curso curso) {
 	this.curso = curso;
 }
 
-public ArrayList<Disciplina> getDisciplina() {
-	return disciplina;
+public List<Disciplina> getDisciplina() {
+	return listDisciplina;
 }
 
-public void setDisciplina(ArrayList<Disciplina> disciplina) {
-	this.disciplina = disciplina;
+public void setDisciplina(List<Disciplina> disciplina) {
+	this.listDisciplina = disciplina;
+	
+
 }
 
+////metodos publicos
 
 
+public void addDisciplinaAluno(Disciplina discipplina) {
+	
+	  listDisciplina.add(discipplina);
+	
+	
+}
+	
+	
+	
+	
+public void mostraDisciplina() {
 
+	for (Disciplina disciplina : listDisciplina) {
+		System.out.println(disciplina);
+	}
+	 
+}
 
-
-/////////////////
 
 
 @Override
 public String toString() {
-	return "Aluno [matricula=" + matricula + ", situacao=" + situacao + ", curso=" + curso + ", disciplina="
-			+ disciplina + "]";
+	return "Aluno matricula: " + matricula + "\n" + curso + "\n:" + listDisciplina.toString();
 }
-
-
-////sistuçao
-
-
-public Boolean  situacao(Aluno objAluno) {
-	if(objAluno.getMatricula().equals(matricula) ) {
-		System.out.println("O aluno esta matriculado");
-		return true;
-	}else {
-		System.out.println("aluno nao esta matriculado, faça sua matricula");
-		return false;
-	}
-}
-
-
-public void mostraAluno() {
-	
-	System.out.println("nome : "+ getNome());
-	System.out.println("Curso " + getCurso());
-	System.out.println("disciplinas ");
-        
-	}
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	
@@ -121,12 +109,3 @@ public void mostraAluno() {
 	
 	
 	
-	
-
-
-	
-	
-	
-	
-	
-}

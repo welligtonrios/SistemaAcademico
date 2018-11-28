@@ -6,7 +6,7 @@ public class Disciplina {
 	
 	
 	private String nomeDisc;
-	private String codigoDisc;
+	private long codigoDisc;
 	private int sala;
 	private int cargaHoraria;
 	private double custo;
@@ -15,17 +15,18 @@ public class Disciplina {
 	//chamada listar o numero de alunos matriculados 	
 	private ArrayList<Aluno> chamada = new ArrayList<Aluno>();
 	
+	public Disciplina(String nome,long codigo,Professor professor,int sala) {
+	this.nomeDisc = nome;
+	this.codigoDisc = codigo;
+	this.professor = professor;
+	this.sala = sala;
 	
-	/////
-
-	public Disciplina() {
-		
 	}
+    	
+	
 
 
-
-
-	public Disciplina(String nomeDisc, String codigoDisc, int sala, int cargaHoraria, double custo,Professor professor) {
+	public Disciplina(String nomeDisc, long codigoDisc, int sala, int cargaHoraria, double custo,Professor professor) {
 		super();
 		this.nomeDisc = nomeDisc;
 		this.codigoDisc = codigoDisc;
@@ -52,14 +53,14 @@ public class Disciplina {
 
 
 
-	public String getCodigoDisc() {
+	public long getCodigoDisc() {
 		return codigoDisc;
 	}
 
 
 
 
-	public void setCodigoDisc(String codigoDisc) {
+	public void setCodigoDisc(long codigoDisc) {
 		this.codigoDisc = codigoDisc;
 	}
 
@@ -133,33 +134,24 @@ public class Disciplina {
 		this.chamada = chamada;
 	}
 
-///////////
 	
+
+	///metodos publicos 
+	
+	public void chamada(Aluno a) {
+		chamada.add(a);
+	}
+
+
+
 
 	@Override
 	public String toString() {
-		return "Disciplina [nomeDisc=" + nomeDisc + ", codigoDisc=" + codigoDisc + ", sala=" + sala + ", cargaHoraria="
-				+ cargaHoraria + ", custo=" + custo + ", professor=" + professor + ", chamada=" + chamada + "]";
+		return "Disciplina: " + nomeDisc + " sala: " + sala + " professor: " + professor + "\n";
 	}
 	
 	
 	
-	
-	
-////
-	
-	public void addAluno(String nome, String matricula) {
-		Aluno a = new Aluno();
-		a.getNome();
-		a.getMatricula();
-		chamada.add(a);
-	}
-	
-	public void mostraDisciplinas() {
-		for (Aluno aluno : chamada) {
-			aluno.mostraAluno();
-		}
-	}
 	
 	
 

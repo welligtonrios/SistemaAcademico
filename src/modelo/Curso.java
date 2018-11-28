@@ -17,12 +17,16 @@ public class Curso {
 	
 	///////
 	
-	public Curso() {
-		super();
+	
+	
+	public Curso(String nome, Professor professorCoordenador ) {
+		this.nome = nome;
+		this.professorCoordenador = professorCoordenador;
+
+
 	}
 	
-	
-	
+
 public Curso(String nome, String codigo, String turno, Professor professorCoordenador) {
 		super();
 		this.nome = nome;
@@ -93,18 +97,19 @@ public void setGrade(ArrayList<Disciplina> grade) {
 
 
 
+//////// metodos publicos 
+
+public void grade(Disciplina disciplina) {
+	grade.add(disciplina);
+}
 
 
-
-
-////////
-
-	
 @Override
 public String toString() {
-	return "Curso [nome=" + nome + ", codigo=" + codigo + ", turno=" + turno + ", professorCoordenador="
-			+ professorCoordenador + ", grade=" + grade + "]";
+	return "Curso: " + nome ;
 }
+
+	
 	
 
 	
