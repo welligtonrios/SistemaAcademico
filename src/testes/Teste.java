@@ -1,4 +1,4 @@
-package menu;
+package testes;
 
 
 import modelo.Aluno;
@@ -6,7 +6,7 @@ import modelo.Curso;
 import modelo.Disciplina;
 import modelo.Professor;
 
-public class teste {
+public class Teste {
 
 	public static void main(String[] args) {
 		
@@ -21,10 +21,11 @@ public class teste {
 	//disciplinas professor 
      p.disciplinasProff(disciplina);
      p.disciplinasProff(disciplina1);
+     disciplina.setProfessor(p);
 	 Curso curso = new Curso("computaçao",p);
 	 //grade do curso 
-	 curso.grade(disciplina);
-	 curso.grade(disciplina1);
+	 curso.addDiciplina(disciplina);
+	 curso.addDiciplina(disciplina1);
 	 
 	
 	 
@@ -40,8 +41,8 @@ public class teste {
      p1.disciplinasProff(disciplina3);
 	 Curso curso1 = new Curso("Sistemas", p1);
 	//grade do curso 
-	 curso1.grade(disciplina);
-	 curso1.grade(disciplina1);
+	 curso1.addDiciplina(disciplina);
+	 curso1.addDiciplina(disciplina1);
 	
 	 
 	 ///////
@@ -57,27 +58,29 @@ public class teste {
      p2.disciplinasProff(disciplina6);
 	 Curso curso2 = new Curso("Ciencência da Computaçao", p2);
 	//grade do curso
-	 curso2.grade(disciplina);
-	 curso2.grade(disciplina5);
-	 curso2.grade(disciplina6);
-	 curso2.grade(disciplina4);
+	 curso2.addDiciplina(disciplina);
+	 curso2.addDiciplina(disciplina5);
+	 curso2.addDiciplina(disciplina6);
+	 curso2.addDiciplina(disciplina4);
 
-
-	 Aluno a = new Aluno(" Welligton", "cpf", "endereco", "email", "telefone"," matricula",curso);
+	
+	 Aluno a = new Aluno(" Welligton", "06107138331", "Bela Vista", "wriosfaculdade@gmail.com", "85845478", curso);
+	  a.setMatricula(a.getCpf().substring(7, 11)) ;
 	 a.addDisciplinaAluno(disciplina1);
 	 a.addDisciplinaAluno(disciplina);
-	 
-	 Aluno a1 = new Aluno(" Jose", "cpf", "endereco", "email", "telefone"," matricula",curso2);
+	
+	 Aluno a1 = new Aluno(" Jose", "06107138331", "endereco", "email", "telefone",curso2);
+	 a1.setMatricula(a.getCpf().substring(7, 11)) ;
 	 a1.addDisciplinaAluno(disciplina5);
 	 a1.addDisciplinaAluno(disciplina4);
 	 a1.addDisciplinaAluno(disciplina);
 	 
-	 Aluno a2 = new Aluno(" Maria", "cpf", "endereco", "email", "telefone"," matricula",curso1);
+	 Aluno a2 = new Aluno(" Maria", "06107138331", "endereco", "email", "telefone",curso1);
 	 a2.addDisciplinaAluno(disciplina6);
 	 a2.addDisciplinaAluno(disciplina3);
 	 a2.addDisciplinaAluno(disciplina);
 	 
-	 Aluno a3 = new Aluno(" Tiago", "cpf", "endereco", "email", "telefone"," matricula",curso);
+	 Aluno a3 = new Aluno(" Tiago", "06107138331", "endereco", "email", "telefone",curso);
 	 a3.addDisciplinaAluno(disciplina6);
 	 a3.addDisciplinaAluno(disciplina5);
 	 a3.addDisciplinaAluno(disciplina);
@@ -106,11 +109,14 @@ public class teste {
 	 //
 	 
 
-	 System.out.println(a1);
+	 //System.out.println(a1);
 	 
+	// disciplina.mostraDisciplina();
+	 //System.out.println(curso2);
+	 //System.out.println(curso2);
 	 
-	 
-	 
+	 System.out.println(a );
+	 a.mostraAluno();
 	}
 
 }

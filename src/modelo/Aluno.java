@@ -2,6 +2,7 @@ package modelo;
 
 
 import java.util.ArrayList;
+
 import java.util.List;
 
 import herdar.Pessoa; 
@@ -14,22 +15,34 @@ public class Aluno extends Pessoa {
 	
 ///
 	
-	private List<Disciplina> listDisciplina = new ArrayList<Disciplina>(6);
+	private List<Disciplina> listDisciplina = new ArrayList<Disciplina>();
 
 //// metodos especiais 
 	
-
-
-
-public Aluno(String nome, String cpf, String endereco, String email, String telefone, String matricula,
-		 Curso curso) {
-	super(nome, cpf, endereco, email, telefone);
-	this.matricula = matricula;
+	
+public Aluno() {
+	
+}
+	
+	
+public Aluno (Curso curso) {
 	this.curso = curso;
+}
+
+
+public Aluno(String nome, String cpf,String endereco, String email,String telefone, String matricula) {
+	super(nome, cpf, telefone,endereco,email);
+	this.matricula = matricula;
+	//this.curso = curso;
 	
 }
 
 
+public Aluno(String nome, String cpf,String endereco, String email,String telefone, Curso curso) {
+	super(nome, cpf, telefone,endereco,email);
+	this.curso = curso;
+	
+}
 
 public String getMatricula() {
 	return matricula;
@@ -69,10 +82,18 @@ public void setDisciplina(List<Disciplina> disciplina) {
 
 
 public void addDisciplinaAluno(Disciplina discipplina) {
-	
-	  listDisciplina.add(discipplina);
-	
-	
+	 
+	  if(listDisciplina.size() >= 6) {
+		  
+		  System.out.println("Numero de disciplina maximo");
+		  
+	  }else{
+		  
+		  listDisciplina.add(discipplina);
+	  
+	  }
+	  
+	  
 }
 	
 	
@@ -86,11 +107,23 @@ public void mostraDisciplina() {
 	 
 }
 
+public void mostraAluno() {
+	
+	System.out.println("nome: " + getNome());
+	System.out.println("cpf: " + getCpf());
+	System.out.println("matricula: " + this.matricula);
+	System.out.println("telefone: " + getTelefone());
+	System.out.println("Email: " + getEmail());
+	System.out.println("Curso: "+ getCurso());
+	System.out.println("Disciplinas: " + getDisciplina());
+	
+}
+
 
 
 @Override
-public String toString() {
-	return "Aluno matricula: " + matricula + "\n" + curso + "\n:" + listDisciplina.toString();
+public String toString(){
+	return "Aluno:  " + getNome()   + " matricula: " + matricula ;
 }
 	
 	

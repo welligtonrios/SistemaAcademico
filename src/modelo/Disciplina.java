@@ -2,6 +2,8 @@ package modelo;
 
 import java.util.ArrayList;
 
+
+
 public class Disciplina {
 	
 	
@@ -15,6 +17,14 @@ public class Disciplina {
 	//chamada listar o numero de alunos matriculados 	
 	private ArrayList<Aluno> chamada = new ArrayList<Aluno>();
 	
+	
+	
+	////บบบ
+	
+	public Disciplina() {
+		
+	}
+	
 	public Disciplina(String nome,long codigo,Professor professor,int sala) {
 	this.nomeDisc = nome;
 	this.codigoDisc = codigo;
@@ -26,14 +36,14 @@ public class Disciplina {
 	
 
 
-	public Disciplina(String nomeDisc, long codigoDisc, int sala, int cargaHoraria, double custo,Professor professor) {
+	public Disciplina(String nomeDisc, long codigoDisc, int sala, int cargaHoraria, double custo) {
 		super();
 		this.nomeDisc = nomeDisc;
 		this.codigoDisc = codigoDisc;
 		this.sala = sala;
 		this.cargaHoraria = cargaHoraria;
 		this.custo = custo;
-		this.professor = professor;
+		//this.professor = professor;
 	}
 
 
@@ -138,20 +148,27 @@ public class Disciplina {
 
 	///metodos publicos 
 	
+	
+// quando o aluno de cadastrar na disciplina ele vai para chamada	
 	public void chamada(Aluno a) {
 		chamada.add(a);
 	}
 
-
-
-
+   /////////////
+	
 	@Override
-	public String toString() {
-		return "Disciplina: " + nomeDisc + " sala: " + sala + " professor: " + professor + "\n";
+	public String toString(){
+		return "Disciplina: " + nomeDisc + " codigo: " + codigoDisc + " sala: " + sala ;
 	}
-	
-	
-	
+
+	public void mostraDisciplina() {
+		System.out.println("Nome: " + this.nomeDisc);
+		System.out.println("Codigo: " + this.codigoDisc);
+		System.out.println("Sala: " + this.sala);
+		System.out.println("Carga Horaria: " + this.cargaHoraria + "hrs");
+		System.out.println("Curso: " + this.custo);
+		//System.out.println("Professor Coordenador: " + this.professor);
+	}
 	
 	
 

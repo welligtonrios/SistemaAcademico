@@ -1,33 +1,53 @@
 package service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import modelo.Curso;
-import modelo.Disciplina;
-import modelo.Professor;
 
 public class ServiceCurso {
 
 
-	ArrayList<Disciplina> grade = new ArrayList<Disciplina>();
+List<Curso> listCursos = new ArrayList<>();
+
+
+public void addCurso(String nome, long codigo, String turno) {
 	
+	Curso c = new Curso(nome,codigo,turno);
+	listCursos.add(c);
 	
-	public ArrayList<Disciplina>getListDisciplina(){
-		return this.grade;
+}
+
+public Curso buscarCurso(long codigo) {
+	
+	for (Curso curso : listCursos) {
+		      if(curso.getCodigo() == codigo ) {
+			return curso;
+		}
 	}
 	
-	//CRUD
-	
-	//add disciplina 
-	
-
-public void addDisciplina(String nomeDisc, String codigoDisc, int sala, int cargaHoraria, double custo,Professor professor) {
-
-Disciplina d = new Disciplina(nomeDisc, codigoDisc, sala, cargaHoraria, custo, professor);
-
-	grade.add(d);
-
+	System.out.println("curso nao encontrado :(...");
+	return null;
 }
+
+public void povoaCurso() {
+
+	Curso  c = new Curso("Ciencias da computaçao",12,"noite");
+	Curso  c1 = new Curso("Sistemas",13,"noite");
+	Curso  c2 = new Curso("Redes",14,"noite");
+	listCursos.add(c);
+	listCursos.add(c1);
+	listCursos.add(c2);
 	
+}
+
+
+
+
+
+
+
+
+
 	
 }

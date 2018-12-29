@@ -1,12 +1,14 @@
 package modelo;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 public class Curso {
 //////
 	
 	private String nome;
-	private String  codigo;
+	private long codigo;
 	private String turno;
 	private Professor professorCoordenador;
 
@@ -17,6 +19,9 @@ public class Curso {
 	
 	///////
 	
+	public Curso() {
+		
+	}
 	
 	
 	public Curso(String nome, Professor professorCoordenador ) {
@@ -27,12 +32,12 @@ public class Curso {
 	}
 	
 
-public Curso(String nome, String codigo, String turno, Professor professorCoordenador) {
+public Curso(String nome, long codigo, String turno) {
 		super();
 		this.nome = nome;
 		this.codigo = codigo;
 		this.turno = turno;
-		this.professorCoordenador = professorCoordenador;
+		//this.professorCoordenador = professorCoordenador;
 	}
 
 ///////////
@@ -49,13 +54,13 @@ public void setNome(String nome) {
 
 
 
-public String getCodigo() {
+public long getCodigo() {
 	return codigo;
 }
 
 
 
-public void setCodigo(String codigo) {
+public void setCodigo(long codigo) {
 	this.codigo = codigo;
 }
 
@@ -99,16 +104,46 @@ public void setGrade(ArrayList<Disciplina> grade) {
 
 //////// metodos publicos 
 
-public void grade(Disciplina disciplina) {
-	grade.add(disciplina);
+
+public void addDiciplina(Disciplina d) {
+	grade.add(d);
+	
 }
 
+
+///////////////// receber o coigo do curso
+
+public void codigo(long codigoCusro) {
+	   
+	   Scanner teclado = new Scanner(System.in);
+	   
+	   int a=-7;
+    while( a != 1 ) {
+    	 System.out.println("digite o cogigo da disciplina: ");
+    	 codigoCusro = teclado.nextLong();
+         String s2 = String.valueOf(codigoCusro); 
+         
+    	if(s2.length() > 4 | s2.length() < 4) {
+        	System.out.println("digite codigo de 4 digitos ");
+        	a = -8;
+        }else{
+            
+        	System.out.println("codigo sucesso ");
+        	 a = 1;
+        }
+    	
+    }
+	   
+}
 
 @Override
 public String toString() {
-	return "Curso: " + nome ;
+	return "Curso: " + nome  + "\ngrade: " + getGrade();
 }
 
+public void mostraCurso() {
+	System.out.println("Curso: "+ this.nome + " Turno: " + this.turno);
+}
 	
 	
 

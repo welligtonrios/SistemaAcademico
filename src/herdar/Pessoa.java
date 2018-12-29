@@ -12,6 +12,17 @@ public  class Pessoa {
 	//บบ
 	
 	
+	public Pessoa() {
+		
+	}
+
+	public Pessoa(String nome, String cpf, String telefone) {
+		this.nome = nome;
+		this.cpf = cpf;
+		this.telefone = telefone;
+		
+	}
+	
 	public Pessoa(String nome, String cpf, String endereco, String email, String telefone) {
 		super();
 		this.nome = nome;
@@ -20,9 +31,6 @@ public  class Pessoa {
 		this.email = email;
 		this.telefone = telefone;
 	}
-	
-	
-	
 	
 	public String getNome() {
 		return nome;
